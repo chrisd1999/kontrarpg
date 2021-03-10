@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 
 namespace TMPro.Examples
@@ -95,12 +94,12 @@ namespace TMPro.Examples
                                       //m_TextPopup_RectTransform.position = worldPointInRectangle;
                                       //m_TextPopup_RectTransform.gameObject.SetActive(true);
                                       //m_TextPopup_TMPComponent.text = k_LinkText + " ID 01";
-                            break;
+                        break;
                         case "id_02": // 100041638: // id_02
                                       //m_TextPopup_RectTransform.position = worldPointInRectangle;
                                       //m_TextPopup_RectTransform.gameObject.SetActive(true);
                                       //m_TextPopup_TMPComponent.text = k_LinkText + " ID 02";
-                            break;
+                        break;
                     }
                 }
                 #endregion

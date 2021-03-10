@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
 
 
 #pragma warning disable 0618 // Disabled warning due to SetVertices being deprecated until new release with SetMesh() is available.
@@ -263,15 +260,15 @@ namespace TMPro.Examples
                     switch (linkInfo.GetLinkID())
                     {
                         case "id_01": // 100041637: // id_01
-                            m_TextPopup_RectTransform.position = worldPointInRectangle;
-                            m_TextPopup_RectTransform.gameObject.SetActive(true);
-                            m_TextPopup_TMPComponent.text = k_LinkText + " ID 01";
-                            break;
+                        m_TextPopup_RectTransform.position = worldPointInRectangle;
+                        m_TextPopup_RectTransform.gameObject.SetActive(true);
+                        m_TextPopup_TMPComponent.text = k_LinkText + " ID 01";
+                        break;
                         case "id_02": // 100041638: // id_02
-                            m_TextPopup_RectTransform.position = worldPointInRectangle;
-                            m_TextPopup_RectTransform.gameObject.SetActive(true);
-                            m_TextPopup_TMPComponent.text = k_LinkText + " ID 02";
-                            break;
+                        m_TextPopup_RectTransform.position = worldPointInRectangle;
+                        m_TextPopup_RectTransform.gameObject.SetActive(true);
+                        m_TextPopup_TMPComponent.text = k_LinkText + " ID 02";
+                        break;
                     }
                 }
                 #endregion
@@ -286,7 +283,7 @@ namespace TMPro.Examples
                     m_lastIndex = -1;
                 }
             }
-            
+
         }
 
 
@@ -455,7 +452,8 @@ namespace TMPro.Examples
 
         void RestoreCachedVertexAttributes(int index)
         {
-            if (index == -1 || index > m_TextMeshPro.textInfo.characterCount - 1) return;
+            if (index == -1 || index > m_TextMeshPro.textInfo.characterCount - 1)
+                return;
 
             // Get the index of the material / sub text object used by this character.
             int materialIndex = m_TextMeshPro.textInfo.characterInfo[index].materialReferenceIndex;
