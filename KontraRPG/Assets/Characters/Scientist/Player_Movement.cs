@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,22 +8,22 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float walkSpeed=5;
     [SerializeField] private float runSpeed=7;
 
-    public Transform AttackPoint;
-    public float attackRate=0.5f;
-    float nextAttackTime=0f;
-    public float attackRange=2f;
-    public int attackDamage=40;
-    public LayerMask enemyLayers;
-    private Vector3 moveDirection;
-    private Vector3 velocity;
+    [SerializeField] private Transform AttackPoint;
+    [SerializeField] private float attackRate=0.5f;
+    [SerializeField] private float nextAttackTime=0f;
+    [SerializeField] private float attackRange=2f;
+    [SerializeField] private int attackDamage=40;
+    [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private Vector3 moveDirection;
+    [SerializeField] private Vector3 velocity;
 
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
 
-    private CharacterController controller;
-    private Animator anim;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private Animator anim;
     // Start is called before the first frame update
     private void Start()
     {
@@ -40,7 +40,7 @@ public class Player_Movement : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     Attack();
-                    nextAttackTime=Time.time+1f/attackRate;
+                    nextAttackTime=Time.time + 1f / attackRate;
                 }
             }
 
