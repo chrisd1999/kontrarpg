@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
-
-
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed=5;
     [SerializeField] private float runSpeed=7;
@@ -34,10 +29,7 @@ public class Player_Movement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-
+        
     }
 
     // Update is called once per frame
@@ -51,10 +43,7 @@ public class Player_Movement : MonoBehaviour
                     nextAttackTime=Time.time + 1f / attackRate;
                 }
             }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+
     }
     private void Move()
     {
@@ -113,19 +102,4 @@ public class Player_Movement : MonoBehaviour
     {
         Gizmos.DrawWireSphere(AttackPoint.position,attackRange);
     }
-
-    //health bar
-
-    
-   
-
-    
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-    }
-    
-    //healtbar end
 }
