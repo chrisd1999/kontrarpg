@@ -6,23 +6,23 @@ public class Camera_Controller : MonoBehaviour
 {
     [SerializeField] private float mouseSensitivity;
 
-    private Transform parent;
-    // Start is called before the first frame update
+    private Transform _parent;
+
     private void Start()
     {
-        parent= transform.parent;
-        Cursor.lockState=CursorLockMode.Locked;
+        _parent = transform.parent;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         Rotate();
     }
+
     private void Rotate()
     {
-        float mouseX = Input.GetAxis("Mouse X")*mouseSensitivity*Time.deltaTime;
-    
-        parent.Rotate(Vector3.up, mouseX);
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        _parent.Rotate(Vector3.up, mouseX);
     }
 }
