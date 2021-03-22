@@ -9,6 +9,7 @@ namespace Inventory
         public static Inventory Instance { get; private set; }
 
         private bool _inventoryEnabled = false;
+        
         void Awake()
         {
             if (Instance != null)
