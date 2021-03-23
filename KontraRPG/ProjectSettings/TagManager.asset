@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bandit
+  - Boss
+  - NPC
+  - Witch
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - Ground
   - Scientist
   - Bandit
-  - 
-  - 
-  - 
+  - Witch
+  - Boss
+  - NPC
   - 
   - 
   - 
