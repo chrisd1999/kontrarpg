@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private HealthBar healthBar;
 
 
     [SerializeField] private float moveSpeed;
@@ -56,7 +56,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(20);
+            TakeHealthDamage(20);
         }
     }
 
@@ -131,8 +131,7 @@ public class Player_Movement : MonoBehaviour
 
     //health bar
 
-
-    void TakeDamage(int damage)
+    void TakeHealthDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
