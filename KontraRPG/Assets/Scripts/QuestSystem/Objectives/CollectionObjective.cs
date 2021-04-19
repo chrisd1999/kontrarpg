@@ -71,7 +71,9 @@ namespace QuestSystem.Objectives
 
         public override string ToString()
         {
-            return $"You have gathered {_currentAmount} out of {_questAmount} {_itemToCollect.name}";
+            // return $"You have gathered {_currentAmount} out of {_questAmount} {_itemToCollect.name}";
+            return $"You have gathered {_currentAmount} out of {_questAmount} item";
+
         }
     }
 }

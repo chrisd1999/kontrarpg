@@ -11,5 +11,6 @@ namespace Interfaces
         bool IsCompleted { get; }
         void UpdateProgress();
         void CheckProgress();
+        string ToString();
     }
 }
