@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags: []
+=======
+  tags:
+  - Bandit
+  - Boss
+  - NPC
+  - Witch
+  - QuestTitle
+  - QuestProgress
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
