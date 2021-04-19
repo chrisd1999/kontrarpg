@@ -4,8 +4,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject monster;
-    [SerializeField] private float spawnDelay;
     [SerializeField] private bool respawn;
+    [SerializeField] private float spawnDelay;
     private float _currentTime;
     private bool _spawning;
 
