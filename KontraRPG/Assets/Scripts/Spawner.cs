@@ -1,24 +1,25 @@
-﻿using UnityEngine;
+﻿using Interfaces;
+using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _monster;
-    [SerializeField] private float _spawnDelay;
+    [SerializeField] private GameObject monster;
+    [SerializeField] private float spawnDelay;
+    [SerializeField] private bool respawn;
     private float _currentTime;
-    private bool _respawn;
     private bool _spawning;
 
     private void Start()
     {
         Spawn();
-        _currentTime = _spawnDelay;
+        _currentTime = spawnDelay;
     }
 
     private void Update()
     {
         if (!_spawning) return;
 
-        _currentTime -= _spawnDelay;
+        _currentTime -= spawnDelay;
         if (_currentTime <= 0)
         {
             Spawn();
@@ -28,14 +29,14 @@ public class Spawner : MonoBehaviour
     public void Respawn()
     {
         _spawning = true;
-        _currentTime = _spawnDelay;
+        _currentTime = spawnDelay;
     }
     
     private void Spawn()
     {
-        IEnemy instance = Instantiate(_monster, transform.position, Quaternion.identity).GetComponent<IEnemy>();
-        instance.Spawner = this;
-        
+        IEnemy instance = Instantiate(monster, transform.position, Quaternion.identity).GetComponent<IEnemy>();
+        if (instance != null) instance.Spawner = this;
+
         _spawning = false;
     }
 }
