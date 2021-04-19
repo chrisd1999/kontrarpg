@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using QuestSystem;
 using QuestSystem.Quests;
 using TMPro;
 using UnityEngine;
+using static Inventory.Inventory;
 
 public class QuestManager : MonoBehaviour
 {
@@ -27,7 +27,15 @@ public class QuestManager : MonoBehaviour
     private void Update()
     {
         if (_quests.Count <= 0) return;
-        _quests[_currentID].UpdateProgress();
-        _progress.SetText(_quests[_currentID].Progress);
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            _quests[_currentID].UpdateProgress();
+            if (_quests[_currentID].IsCompleted())
+            {
+                _quests[_currentID].GiveQuestReward();
+                _currentID++;
+            };
+            _progress.SetText(_quests[_currentID].Progress);
+        }
     }
 }

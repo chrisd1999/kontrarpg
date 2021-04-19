@@ -55,7 +55,7 @@ namespace QuestSystem.Objectives
 
         public void UpdateProgress()
         {
-            throw new System.NotImplementedException();
+            _currentAmount++;
         }
 
         public void CheckProgress()

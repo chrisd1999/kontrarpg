@@ -20,5 +20,14 @@ namespace QuestSystem
         {
             _questObjective.UpdateProgress();
         }
+
+        public bool IsCompleted()
+        {
+            _questObjective.CheckProgress();
+            
+            return _questObjective.IsCompleted;
+        }
+
+        public abstract void GiveQuestReward();
     }
 }
