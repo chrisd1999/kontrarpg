@@ -10,6 +10,7 @@ TagManager:
   - Witch
   - QuestTitle
   - QuestProgress
+  - Inventory
   layers:
   - Default
   - TransparentFX
