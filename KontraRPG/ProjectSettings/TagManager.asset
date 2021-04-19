@@ -8,6 +8,8 @@ TagManager:
   - Boss
   - NPC
   - Witch
+  - QuestTitle
+  - QuestProgress
   layers:
   - Default
   - TransparentFX
