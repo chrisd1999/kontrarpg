@@ -1,5 +1,4 @@
-﻿using Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Inventory
 {
@@ -41,11 +40,6 @@ namespace Inventory
                 return;
             }
             inventory.SetActive(false);
-        }
-
-        public void AddItemToInventory(IItem item)
-        {
-            
         }
     }
 }
