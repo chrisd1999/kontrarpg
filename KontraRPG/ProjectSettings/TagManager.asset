@@ -11,6 +11,7 @@ TagManager:
   - QuestTitle
   - QuestProgress
   - Inventory
+  - Image
   layers:
   - Default
   - TransparentFX
