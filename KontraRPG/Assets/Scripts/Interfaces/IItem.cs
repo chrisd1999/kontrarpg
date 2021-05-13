@@ -1,10 +1,10 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Interfaces
 {
     public interface IItem
     {
         string Name { get; }
-        Image icon { get; }
+        Sprite Icon { get; }
     }
 }

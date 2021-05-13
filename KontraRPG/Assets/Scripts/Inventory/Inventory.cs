@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Interfaces;
 
 namespace Inventory
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private GameObject inventory;
         [SerializeField] private int space = 16;
         public static Inventory Instance { get; private set; }
+        public List<IItem> Items = new List<IItem>();
 
         private bool _inventoryEnabled = false;
+        
+        public delegate void OnItemChanged();
+        public OnItemChanged onItemChangedCallback;
         
         void Awake()
         {
@@ -23,29 +27,17 @@ namespace Inventory
             }
             Instance = this;
         }
-
-        void Update()
-        {
-            if (Input.GetButtonDown("Inventory"))
-            {
-                _inventoryEnabled = !_inventoryEnabled;
-            }
-            ShowInventory();
-        }
-
-        private void ShowInventory()
-        {
-            if (_inventoryEnabled == true)
-            {
-                inventory.SetActive(true);
-                return;
-            }
-            inventory.SetActive(false);
-        }
-
+        
         public void AddItemToInventory(IItem item)
         {
+            Items.Add(item);
+            onItemChangedCallback?.Invoke();
+        }
 
+        public void RemoveItemFromInventory(IItem item)
+        {
+            Items.Remove(item);
+            onItemChangedCallback?.Invoke();
         }
     }
 }
