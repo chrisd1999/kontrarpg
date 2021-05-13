@@ -10,9 +10,22 @@ public class QuestManager : MonoBehaviour
     private TextMeshProUGUI _title;
     private TextMeshProUGUI _progress;
     private int _currentID = 0;
-
+    
+    public static QuestManager Instance { get; private set; }
     private readonly List<Quest> _quests = new List<Quest>();
-
+        
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            if (Instance != this)
+            {
+                GameObject.Destroy(gameObject);
+            }
+            return;
+        }
+        Instance = this;
+    }
     private void Start()
     {
         _title = GameObject.FindGameObjectWithTag("QuestTitle").GetComponent<TextMeshProUGUI>();
