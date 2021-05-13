@@ -12,6 +12,7 @@ TagManager:
   - QuestProgress
   - Inventory
   - Image
+  - InventorySlot
   layers:
   - Default
   - TransparentFX

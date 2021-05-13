@@ -5,13 +5,12 @@ namespace Inventory.Items
 {
     public class WitchBroom : IItem
     {
-        private const string _name = "Witch Broom";
-        private readonly Sprite _icon;
+        private string _name = "Witch Broom";
+        private Sprite _icon;
 
         public WitchBroom()
         {
             _icon = Resources.Load<Sprite>("Sprites/fist");
-            Debug.Log(_icon);
         }
         public string Name
         {

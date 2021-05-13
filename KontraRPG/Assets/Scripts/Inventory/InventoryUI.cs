@@ -1,11 +1,12 @@
 ﻿using System;
+using Inventory.Items;
 using UnityEngine;
 
 namespace Inventory
 {
     public class InventoryUI : MonoBehaviour
     {
-        [SerializeField] private Transform itemsParent;
+        [SerializeField] private Transform itemsSlots;
         [SerializeField] private GameObject inventoryUI;
         
         private Inventory _inventory;
@@ -17,7 +18,7 @@ namespace Inventory
             _inventory = Inventory.Instance;
             _inventory.onItemChangedCallback += UpdateUI;
 
-            _slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+            _slots = itemsSlots.GetComponentsInChildren<InventorySlot>();
         }
 
 
@@ -47,11 +48,11 @@ namespace Inventory
                 if (i < _inventory.Items.Count)
                 {
                     _slots[i].AddItem(_inventory.Items[i]);
-                    return;
                 }
-                
-                _slots[i].ClearSlot();
-
+                else
+                {
+                    _slots[i].ClearSlot();
+                }
             }
         }
     }

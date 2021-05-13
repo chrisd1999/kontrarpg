@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Interfaces;
+using Inventory.Items;
 
 namespace Inventory
 {
@@ -30,6 +31,11 @@ namespace Inventory
         
         public void AddItemToInventory(IItem item)
         {
+            if (Items.Count >= space)
+            {
+                return;
+            }
+            
             Items.Add(item);
             onItemChangedCallback?.Invoke();
         }

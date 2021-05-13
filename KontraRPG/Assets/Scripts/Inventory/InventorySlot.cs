@@ -13,7 +13,7 @@ namespace Inventory
         public void AddItem(IItem item)
         {
             _item = item;
-
+            
             icon.sprite = item.Icon;
             icon.enabled = true;
         }
