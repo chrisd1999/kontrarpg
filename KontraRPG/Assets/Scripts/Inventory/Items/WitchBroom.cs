@@ -1,19 +1,24 @@
 ﻿using Interfaces;
-using UnityEngine.UI;
+using UnityEngine;
 
 namespace Inventory.Items
 {
     public class WitchBroom : IItem
     {
-        private string _name = "Witch Broom";
-        private Image _icon;
+        private const string _name = "Witch Broom";
+        private readonly Sprite _icon;
 
+        public WitchBroom()
+        {
+            _icon = Resources.Load<Sprite>("Sprites/fist");
+            Debug.Log(_icon);
+        }
         public string Name
         {
             get => _name;
         }
 
-        public Image icon
+        public Sprite Icon
         {
             get => _icon;
         }

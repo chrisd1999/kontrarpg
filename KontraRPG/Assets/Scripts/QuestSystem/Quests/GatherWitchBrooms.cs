@@ -8,7 +8,6 @@ namespace QuestSystem.Quests
     public class GatherWitchBrooms : Quest
     {
         private GameObject item;
-
         public GatherWitchBrooms()
         {
             QuestObjective = new CollectionObjective("Collect 10 Witch brooms",
