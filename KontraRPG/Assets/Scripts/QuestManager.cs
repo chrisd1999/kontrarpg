@@ -36,17 +36,12 @@ public class QuestManager : MonoBehaviour
     private void Update()
     {
         if (_quests.Count <= 0) return;
-        if (Input.GetKeyDown(KeyCode.G))
+        
+        if (_quests[_currentID].IsCompleted())
         {
-            _quests[_currentID].UpdateProgress();
-            if (_quests[_currentID].IsCompleted())
-            {
-                _quests[_currentID].GiveQuestReward();
-                _currentID++;
-            };
-
-            OnProgressChangedCallback?.Invoke();
-        }
+            _quests[_currentID].GiveQuestReward();
+            _currentID++;
+        };
     }
 
     public string GetCurrentQuestTitle()
@@ -57,5 +52,11 @@ public class QuestManager : MonoBehaviour
     public string GetCurrentQuestProgress()
     {
         return _quests[_currentID].Progress;
+    }
+
+    public void UpdateQuestProgress(int id = 0)
+    {
+        _quests[_currentID].UpdateProgress(id);
+        OnProgressChangedCallback?.Invoke();
     }
 }

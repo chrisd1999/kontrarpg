@@ -16,9 +16,9 @@ namespace QuestSystem
         public string Description => _questObjective.Description;
         public string Progress => _questObjective.ToString();
 
-        public void UpdateProgress()
+        public void UpdateProgress(int id)
         {
-            _questObjective.UpdateProgress();
+            _questObjective.UpdateProgress(id);
         }
 
         public bool IsCompleted()

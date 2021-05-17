@@ -9,7 +9,7 @@ namespace Interfaces
         int CurrentAmount { get; }
         int QuestAmount { get; }
         bool IsCompleted { get; }
-        void UpdateProgress();
+        void UpdateProgress(int id);
         void CheckProgress();
         string ToString();
     }

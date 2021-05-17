@@ -53,7 +53,7 @@ namespace QuestSystem.Objectives
             get => _itemToCollect;
         }
 
-        public void UpdateProgress()
+        public void UpdateProgress(int id)
         {
             _currentAmount++;
         }

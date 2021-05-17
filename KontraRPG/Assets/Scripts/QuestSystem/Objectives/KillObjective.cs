@@ -46,9 +46,12 @@ namespace QuestSystem.Objectives
             get => _isCompleted;
         }
 
-        public void UpdateProgress()
+        public void UpdateProgress(int enemyID)
         {
-            throw new System.NotImplementedException();
+            if (_enemyID == enemyID)
+            {
+                _currentAmount++;
+            }
         }
 
         public void CheckProgress()
@@ -60,6 +63,11 @@ namespace QuestSystem.Objectives
             }
 
             _isCompleted = false;
+        }
+
+        public override string ToString()
+        {
+            return $"You have killed {_currentAmount} out of {_questAmount} witches.";
         }
     }
 }
