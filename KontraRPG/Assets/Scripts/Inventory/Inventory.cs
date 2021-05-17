@@ -14,7 +14,7 @@ namespace Inventory
         private bool _inventoryEnabled = false;
         
         public delegate void OnItemChanged();
-        public OnItemChanged onItemChangedCallback;
+        public OnItemChanged OnItemChangedCallback;
         
         void Awake()
         {
@@ -37,13 +37,13 @@ namespace Inventory
             }
             
             Items.Add(item);
-            onItemChangedCallback?.Invoke();
+            OnItemChangedCallback?.Invoke();
         }
 
         public void RemoveItemFromInventory(IItem item)
         {
             Items.Remove(item);
-            onItemChangedCallback?.Invoke();
+            OnItemChangedCallback?.Invoke();
         }
     }
 }

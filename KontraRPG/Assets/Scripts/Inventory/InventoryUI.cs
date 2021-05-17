@@ -16,7 +16,7 @@ namespace Inventory
         private void Start()
         {
             _inventory = Inventory.Instance;
-            _inventory.onItemChangedCallback += UpdateUI;
+            _inventory.OnItemChangedCallback += UpdateUI;
 
             _slots = itemsSlots.GetComponentsInChildren<InventorySlot>();
         }
