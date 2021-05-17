@@ -11,6 +11,8 @@ public class QuestManager : MonoBehaviour
     
     public static QuestManager Instance { get; private set; }
     private readonly List<Quest> _quests = new List<Quest>();
+    public delegate void OnProgressChanged();
+    public OnProgressChanged OnProgressChangedCallback;
         
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         _quests.Add(new GatherWitchBrooms());
+        
+        OnProgressChangedCallback?.Invoke();
     }
 
     private void Update()
@@ -40,6 +44,8 @@ public class QuestManager : MonoBehaviour
                 _quests[_currentID].GiveQuestReward();
                 _currentID++;
             };
+
+            OnProgressChangedCallback?.Invoke();
         }
     }
 }
