@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
@@ -121,6 +122,7 @@ public class Player_Movement : MonoBehaviour
         foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<Bandit>().TakeDamage(attackDamage);
+            enemy.GetComponent<Witch>().TakeDamage(attackDamage);
         }
     }
 

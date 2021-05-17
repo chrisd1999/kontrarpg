@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
@@ -37,5 +38,7 @@ public class Spawner : MonoBehaviour
         instance.Spawner = this;
         
         _spawning = false;
+
+        throw new System.NotImplementedException();
     }
 }
