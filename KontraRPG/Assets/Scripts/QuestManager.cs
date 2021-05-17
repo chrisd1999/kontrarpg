@@ -48,4 +48,14 @@ public class QuestManager : MonoBehaviour
             OnProgressChangedCallback?.Invoke();
         }
     }
+
+    public string GetCurrentQuestTitle()
+    {
+        return _quests[_currentID].Title;
+    }
+
+    public string GetCurrentQuestProgress()
+    {
+        return _quests[_currentID].Progress;
+    }
 }
