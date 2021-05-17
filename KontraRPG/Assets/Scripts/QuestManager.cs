@@ -7,8 +7,6 @@ using static Inventory.Inventory;
 
 public class QuestManager : MonoBehaviour
 {
-    private TextMeshProUGUI _title;
-    private TextMeshProUGUI _progress;
     private int _currentID = 0;
     
     public static QuestManager Instance { get; private set; }
@@ -28,13 +26,7 @@ public class QuestManager : MonoBehaviour
     }
     private void Start()
     {
-        _title = GameObject.FindGameObjectWithTag("QuestTitle").GetComponent<TextMeshProUGUI>();
-        _progress = GameObject.FindGameObjectWithTag("QuestProgress").GetComponent<TextMeshProUGUI>();
-
         _quests.Add(new GatherWitchBrooms());
-
-        _title.SetText(_quests[_currentID].Title);
-        _progress.SetText(_quests[_currentID].Progress);
     }
 
     private void Update()
@@ -48,7 +40,6 @@ public class QuestManager : MonoBehaviour
                 _quests[_currentID].GiveQuestReward();
                 _currentID++;
             };
-            _progress.SetText(_quests[_currentID].Progress);
         }
     }
 }
