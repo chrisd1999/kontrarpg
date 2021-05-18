@@ -19,8 +19,6 @@ namespace Inventory
             _inventory.OnItemChangedCallback += UpdateUI;
 
             _slots = itemsSlots.GetComponentsInChildren<InventorySlot>();
-            
-            _inventory.AddItemToInventory(new WitchKey());
         }
 
 

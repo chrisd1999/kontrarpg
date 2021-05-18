@@ -19,6 +19,7 @@ namespace QuestSystem
 
         private void UpdateUI()
         {
+            Debug.Log("Hello");
             questTitle.SetText(_questManager.GetCurrentQuestTitle());
             questProgress.SetText(_questManager.GetCurrentQuestProgress());
         }

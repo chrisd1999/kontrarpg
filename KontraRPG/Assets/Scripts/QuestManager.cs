@@ -18,7 +18,7 @@ public class QuestManager : MonoBehaviour
         {
             if (Instance != this)
             {
-                GameObject.Destroy(gameObject);
+                Destroy(gameObject);
             }
             return;
         }
@@ -27,19 +27,25 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         _quests.Add(new GatherWitchBrooms());
-        
         OnProgressChangedCallback?.Invoke();
     }
 
     private void Update()
     {
         if (_quests.Count <= 0) return;
-        
-        if (_quests[_currentID].IsCompleted())
+
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            _quests[_currentID].GiveQuestReward();
-            _currentID++;
-        };
+            _quests[_currentID].UpdateProgress(1);
+            if (_quests[_currentID].IsCompleted())
+            {
+                _quests[_currentID].GiveQuestReward();
+                _currentID++;
+            };
+            OnProgressChangedCallback?.Invoke();
+        }
+        
+
     }
 
     public string GetCurrentQuestTitle()

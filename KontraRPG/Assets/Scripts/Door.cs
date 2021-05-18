@@ -20,7 +20,6 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        _ui.GetComponent<TextMeshProUGUI>().SetText("Press F to open door");
         _ui.SetActive(_closedDoor);
         if (!Input.GetKeyDown(KeyCode.F)) return;
         OpenDoor();
@@ -38,10 +37,6 @@ public class Door : MonoBehaviour
             _anim.SetBool("Opened", true);
             _inventory.RemoveItemFromInventory(new WitchKey());
             _closedDoor = false;
-        }
-        else
-        {
-            _ui.GetComponent<TextMeshProUGUI>().SetText("You need a key to enter.");
         }
     }
 }
