@@ -13,6 +13,8 @@ TagManager:
   - Inventory
   - Image
   - InventorySlot
+  - BossDoor
+  - InteractUI
   layers:
   - Default
   - TransparentFX

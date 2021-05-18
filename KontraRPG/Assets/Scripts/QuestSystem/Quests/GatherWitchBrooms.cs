@@ -19,8 +19,9 @@ namespace QuestSystem.Quests
 
         public override void GiveQuestReward()
         {
-            Instance.AddItemToInventory(new WitchBroom());
+            // Instance.AddItemToInventory(new WitchBroom());
             Instance.AddItemToInventory(new WitchKey());
         }
+        
     }
 }

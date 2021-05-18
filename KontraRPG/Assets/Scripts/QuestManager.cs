@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using QuestSystem;
 using QuestSystem.Quests;
-using TMPro;
 using UnityEngine;
-using static Inventory.Inventory;
 
 public class QuestManager : MonoBehaviour
 {
